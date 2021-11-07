@@ -1,9 +1,5 @@
 <?php
-$databaseHost = 'localhost';
-$databaseName = 'biodata_mahasiswa';
-$databaseUsername = 'root';
-$databasePassword = '';
-$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
+include_once("config.php");
 
 // Check if form is submitted for user update, then redirect to homepage after update
 if (isset($_POST['update'])) {
@@ -42,11 +38,7 @@ if (isset($_POST['update'])) {
 </head>
 
 <?php
-$databaseHost = 'localhost';
-$databaseName = 'biodata_mahasiswa';
-$databaseUsername = 'root';
-$databasePassword = '';
-$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
+include_once("config.php");
 // Display selected user data based on id
 // Getting id from url
 $nim_mhs = $_GET['id'];

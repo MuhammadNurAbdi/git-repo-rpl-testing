@@ -1,10 +1,6 @@
 <?php
 // include database connection file
-$databaseHost = 'localhost';
-$databaseName = 'biodata_mahasiswa';
-$databaseUsername = 'root';
-$databasePassword = '';
-$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
+include_once("config.php");
 
 // Get id from URL to delete that user
 $nim_mhs = $_GET['id'];
