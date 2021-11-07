@@ -1,23 +1,9 @@
-    <?php
+        <?php
     $databaseHost = 'localhost';
     $databaseName = 'biodata_mahasiswa';
     $databaseUsername = 'root';
     $databasePassword = '';
     $mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
-
-    function delete()
-    {
-        $databaseHost = 'localhost';
-        $databaseName = 'biodata_mahasiswa';
-        $databaseUsername = 'root';
-        $databasePassword = '';
-        $mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
-
-        $nim_mhs = $_GET['nim_mhs'];
-
-        // Delete user row from table based on given id
-        $result = mysqli_query($mysqli, "DELETE FROM mahasiswa WHERE nim_mhs=$nim_mhs");
-    }
     ?>
 
     <!DOCTYPE html>
@@ -118,10 +104,6 @@
                 </thead>
                 <tbody>
                     <?php
-                    if (array_key_exists('button1', $_POST)) {
-                        delete();
-                    }
-
                     $result = mysqli_query($mysqli, "SELECT * FROM mahasiswa ORDER BY no DESC");
                     while ($user_data = mysqli_fetch_array($result)) {
                         echo "<tr>";
@@ -130,6 +112,7 @@
                         echo "<td>" . $user_data['almt_mhs'] . "</td>";
                         echo "<td>" . $user_data['no_mhs'] . "</td>";
                         echo "<td>" . $user_data['email_mhs'] . "</td>";
+                        echo "<td><a href='edit.php?id=$user_data[nim_mhs]'>Edit</a> | <a href='delete.php?id=$user_data[nim_mhs]'>Delete</a></td></tr>";
                     }
                     ?>
                 </tbody>
