@@ -1,4 +1,4 @@
-        <?php
+    <?php
     $databaseHost = 'localhost';
     $databaseName = 'biodata_mahasiswa';
     $databaseUsername = 'root';
@@ -27,7 +27,6 @@
     </head>
 
     <body>
-
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">
                 <i class="fab fa-stumbleupon-circle"></i></a>
@@ -104,7 +103,7 @@
                 </thead>
                 <tbody>
                     <?php
-                    $result = mysqli_query($mysqli, "SELECT * FROM mahasiswa ORDER BY no DESC");
+                    $result = mysqli_query($mysqli, "SELECT * FROM mahasiswa ORDER BY nim_mhs DESC");
                     while ($user_data = mysqli_fetch_array($result)) {
                         echo "<tr>";
                         echo "<td>" . $user_data['nama_mhs'] . "</td>";
